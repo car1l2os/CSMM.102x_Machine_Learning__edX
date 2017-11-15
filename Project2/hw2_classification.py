@@ -3,7 +3,6 @@ from sklearn.metrics import confusion_matrix
 import numpy as np
 import sys
 
-
 def ReadDataset():
     # # FOR TESTING WITH REAL DATA.
     import pandas as pd
@@ -36,7 +35,6 @@ def CreateDataset():
     rng = np.random.RandomState(2)
     X += 0.1 * rng.uniform(size=X.shape)
     linearly_separable = (X, y)
-
     ind = np.arange(len(y))
     np.random.shuffle(ind)
     X = X[ind]
@@ -47,8 +45,6 @@ def CreateDataset():
     # # Split the targets into training/testing sets
     y_train = y[:-1000]
     y_test = y[-1000:]
-
-
     np.savetxt("y_train.csv", y_train, delimiter=",") # write output to file
     np.savetxt("X_train.csv", X_train, delimiter=",") # write output to file
     np.savetxt("X_test.csv", X_test, delimiter=",") # write output to file
